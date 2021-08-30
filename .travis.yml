@@ -1,0 +1,30 @@
+---
+dist: focal
+language: python
+sudo: required
+services:
+  - docker
+
+before_install:
+  - sudo apt-get -qq update
+
+env:
+  global:
+    - COLLECTION_NAMESPACE: "ayr_ton"
+    - COLLECTION_NAME: "devstation"
+  matrix:
+    - MOLECULE_DISTRO: "ubuntu:focal"
+      MOLECULE_SERVICE_MANAGER: "systemd"
+      MOLECULE_COMMAND: "/lib/systemd/systemd"      
+
+install:
+  - pip install molecule yamllint ansible-lint docker
+
+before_script:
+  - cd ../
+  - mkdir -p ansible_collections/$COLLECTION_NAMESPACE
+  - mv ansible-$COLLECTION_NAME ansible_collections/$COLLECTION_NAMESPACE/$COLLECTION_NAME
+  - cd ansible_collections/$COLLECTION_NAMESPACE/$COLLECTION_NAME
+
+script:
+  - molecule test
