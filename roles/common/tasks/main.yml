@@ -1,0 +1,11 @@
+---
+# tasks file for common
+
+- name: assert supported distributions and versions
+  assert:
+    that:
+      - ( ansible_distribution == "Ubuntu"
+        and ( ansible_distribution_version == "20.04" )
+        )
+
+- include: packages.yml

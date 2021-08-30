@@ -1,0 +1,14 @@
+---
+galaxy_info:
+  author: "DevAllTheThingsOpster"
+  description: "Common role for all the galaxy roles"
+  license: "MIT"
+  min_ansible_version: 2.9
+
+  platforms:
+    - name: Ubuntu
+      versions:
+        - focal
+
+  galaxy_tags:
+    - ubuntu

@@ -1,0 +1,22 @@
+---
+- name: Install common packages
+  package:
+    name:
+      - vim-enhanced
+      - git
+      - powerline-fonts
+      - fzf
+      - zsh
+    state: installed
+  become: yes
+- name: Remove unused packages
+  package:
+    name:
+      - nano
+    state: absent
+  become: yes
+- name: Change user shell to zsh
+  become: yes
+  user:
+    name: "{{ current_user }}"
+    shell: /usr/bin/zsh

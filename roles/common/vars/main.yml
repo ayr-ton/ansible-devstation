@@ -1,0 +1,3 @@
+---
+# vars file for common
+current_user: "{{ ansible_user_id }}"
