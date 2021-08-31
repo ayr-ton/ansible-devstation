@@ -2,12 +2,12 @@
 - name: Install common packages
   package:
     name:
-      - vim-enhanced
+      - vim
       - git
-      - powerline-fonts
+      - fonts-powerline
       - fzf
       - zsh
-    state: installed
+    state: present
   become: yes
 - name: Remove unused packages
   package:
