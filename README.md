@@ -1,4 +1,5 @@
-[![CI](https://github.com/ayr-ton/ansible-devstation/actions/workflows/ci.yml/badge.svg)](https://github.com/ayr-ton/ansible-devstation/actions/workflows/ci.yml)
+[![CI/CD](https://github.com/ayr-ton/ansible-devstation/actions/workflows/ci-cd.yml/badge.svg)](https://github.com/ayr-ton/ansible-devstation/actions/workflows/ci-cd.yml)
+
 Ansible Devstation Collection
 ==============================
 

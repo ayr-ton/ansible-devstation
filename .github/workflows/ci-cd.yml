@@ -1,13 +1,13 @@
 ---
-name: CI
+name: CI/CD
 'on':
   push:
     branches:
       - main
 
 jobs:
-  test:
-    name: molecule'
+  test-deploy:
+    name: molecule
     runs-on: ubuntu-latest
     strategy:
       matrix:
@@ -32,3 +32,10 @@ jobs:
           PY_COLORS: '1'
           ANSIBLE_FORCE_COLOR: '1'
           MOLECULE_DISTRO: ${{ matrix.distro }}
+  
+      - name: Deploy Ansible Galaxy Collection
+        uses: artis3n/ansible_galaxy_collection@v2.6.0
+        with:
+          api_key: ${{ secrets.API_KEY_TO_THE_GALAXY }}
+
+
