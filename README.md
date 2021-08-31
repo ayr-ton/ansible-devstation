@@ -1,5 +1,4 @@
 ![Build Status](https://github.com/ayr-ton/ansible-devstation/actions/workflows/ci.yml/badge.svg)
-
 Ansible Devstation Collection
 ==============================
 
