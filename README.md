@@ -1,4 +1,5 @@
-[![Build Status](https://app.travis-ci.com/ayr-ton/ansible-devstation.svg?branch=main)](https://app.travis-ci.com/ayr-ton/ansible-devstation)
+![Build Status](https://github.com/ayr-ton/ansible-devstation/actions/workflows/ci.yml/badge.svg)
+
 Ansible Devstation Collection
 ==============================
 
