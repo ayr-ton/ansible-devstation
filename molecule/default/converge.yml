@@ -1,6 +1,5 @@
 ---
 - name: Converge
   hosts: all
-  collections:
-    - ayr_ton.devstation
+- import_playbook: ../../playbook.yml
     

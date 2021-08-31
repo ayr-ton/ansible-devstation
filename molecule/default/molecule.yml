@@ -5,8 +5,9 @@ driver:
   name: docker
 platforms:
   - name: instance
-    image: docker.io/ubuntu:focal
-    pre_build_image: true
+    image: ubuntu:focal
+    dockerfile: 'Dockerfile.j2'
+    build_image: yes
 provisioner:
   name: ansible
 verifier:
