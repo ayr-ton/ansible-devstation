@@ -7,3 +7,5 @@
   roles:
     - role: common
     - role: dotfiles
+    - role: vscode
+    - role: docker

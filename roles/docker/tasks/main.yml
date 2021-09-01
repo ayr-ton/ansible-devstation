@@ -1,0 +1,24 @@
+---
+# tasks file for docker
+- name: Add Docker GPG apt Key
+  become: yes
+  apt_key:
+    url: https://download.docker.com/linux/ubuntu/gpg
+    state: present
+
+- name: Add Docker Repository
+  become: yes
+  apt_repository:
+    repo: deb https://download.docker.com/linux/ubuntu focal stable
+    state: present
+
+- name: Update apt and install docker-ce
+  become: yes
+  apt: update_cache=yes name=docker-ce state=latest
+
+- name: adding existing user "{{ current_user }}" to group docker
+  become: yes
+  user:
+    name: "{{ current_user }}"
+    groups: docker
+    append: yes
