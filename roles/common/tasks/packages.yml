@@ -13,6 +13,9 @@
       - fonts-powerline
       - fzf
       - zsh
+      - exuberant-ctags 
+      - ncurses-term
+      - curl
     state: present
   become: yes
 - name: Remove unused packages

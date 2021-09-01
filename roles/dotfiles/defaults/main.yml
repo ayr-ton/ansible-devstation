@@ -1,0 +1,14 @@
+---
+# defaults file for dotfiles
+
+dotfiles_repo: "https://github.com/ayr-ton/dotfiles.git"
+dotfiles_repo_version: HEAD
+dotfiles_path: ~/.dotfiles
+
+dotfiles_files:
+  - .zshrc
+  - .vimrc
+
+dotfiles_copy:
+  - .zshrc.local
+  - .ssh/config

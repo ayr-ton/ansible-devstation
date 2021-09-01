@@ -1,0 +1,38 @@
+---
+# tasks file for dotfiles
+
+- name: install antigen
+  get_url:
+    url: http://git.io/antigen
+    dest: "$HOME/antigen.zsh"
+  become: no
+
+- name: checkout dotfiles git repo
+  git:
+    version: "{{ dotfiles_repo_version }}"
+    repo: "{{ dotfiles_repo }}"
+    dest: "{{ dotfiles_path }}"
+    update: yes
+  become: no
+
+- name: link dotfiles
+  file:
+    src: "{{ dotfiles_path }}/{{ item }}"
+    dest: "~/{{ item }}"
+    state: link
+  become: no
+  with_items: "{{ dotfiles_files }}"
+
+- name: Creates .ssh directory if not exists
+  file:
+    path: "~/.ssh"
+    state: directory
+
+- name: copy dotfiles.local
+  copy:
+    src: "{{ dotfiles_path }}/{{ item }}"
+    dest: "~/{{ item }}"
+    backup: yes
+    remote_src: yes
+  become: no
+  with_items: "{{ dotfiles_copy }}"
