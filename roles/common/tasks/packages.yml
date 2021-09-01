@@ -5,6 +5,7 @@
     update_cache: "yes"
     cache_valid_time: 86400 #One day
   become: true
+
 - name: Install common packages
   package:
     name:
@@ -16,14 +17,17 @@
       - exuberant-ctags 
       - ncurses-term
       - curl
+      - python3-pip
     state: present
   become: yes
+
 - name: Remove unused packages
   package:
     name:
       - nano
     state: absent
   become: yes
+
 - name: Change user shell to zsh
   become: yes
   user:
