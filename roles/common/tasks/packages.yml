@@ -18,6 +18,7 @@
       - ncurses-term
       - curl
       - python3-pip
+      - golang
     state: present
   become: yes
 
