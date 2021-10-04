@@ -14,6 +14,7 @@
       - fonts-powerline
       - fzf
       - zsh
+      - direnv
       - exuberant-ctags 
       - ncurses-term
       - curl
