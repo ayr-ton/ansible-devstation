@@ -13,7 +13,7 @@ Tested on:
 
 - Ubuntu 20.04 LTS
 
-Example
+Example from Ansible Galaxy
 -------
 
 ### Install the role:
